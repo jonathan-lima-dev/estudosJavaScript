@@ -14,6 +14,7 @@ let quantideDeVezes = prompt("Digite a quantidade de vezes que deseja calcular a
 
 for(let i = 0; i <= quantideDeVezes; i++){
   let resultado = numero * i
+  //alert(numero + " x " + i + " = " + resultado + "\n")
   console.log(numero + " x " + i + " = " + resultado + "\n")
 }
-alert("Tabuada finalizada! Visualize a tabuada no console.")
+alert("Tabuada finalizada! \nVisualize a tabuada no console. \nAperte F12")
