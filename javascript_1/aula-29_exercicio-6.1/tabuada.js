@@ -4,9 +4,15 @@ Robô da Tabuada:
 - salvar todos os resultados de multiplicações de 1 a 20 usando o número informado dentro de uma variável do tipo string. 
 - Depois o programa deve exibir esses resultados e finalizar.
 */
-let numero = parseFloat(prompt("Digite um número para calcular a tabuada:"))
+let numero = prompt("Digite um número para calcular a tabuada:")
+let quantideDeVezes = prompt("Digite a quantidade de vezes que deseja calcular a tabuada:")
 
-for(let i = 0; i <= 20; i++){
+  while(quantideDeVezes < 10){
+    alert("A quantidade de vezes deve ser maior que 10.")
+    quantideDeVezes = prompt("Digite a quantidade de vezes que deseja calcular a tabuada:")
+  }
+
+for(let i = 0; i <= quantideDeVezes; i++){
   let resultado = numero * i
   console.log(numero + " x " + i + " = " + resultado + "\n")
 }
