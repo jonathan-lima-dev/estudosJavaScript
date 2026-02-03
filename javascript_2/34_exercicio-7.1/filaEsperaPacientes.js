@@ -13,24 +13,34 @@ let filaPacientes = []
 let opcaoMenu = 0
 let nomePaciente = ""
 
+function mostrarFila(){
+let filaCompleta = ""
+      for(let i = 0; i < filaPacientes.length; i++){
+        filaCompleta += (i + 1) + "º " + filaPacientes[i] + "\n"    
+      }
+      alert(filaCompleta)
+}
+
 do {
   opcaoMenu = parseInt(prompt("Escolha uma opção:\n1 - Novo paciente\n2 - Consultar paciente\n3 - Sair")) 
   switch (opcaoMenu) {
     case 1:          
       nomePaciente = prompt("Digite o nome do paciente:")
       filaPacientes.push(nomePaciente)
+      mostrarFila()
       //alert("Fila de pacientes:\n " + filaPacientes)
-      let filaCompleta = ""
-      for(let i = 0; i < filaPacientes.length; i++){
-        filaCompleta += (i + 1) + "º " + filaPacientes[i] + "\n"        
-      }
-      alert(filaCompleta)
+      //let filaCompleta = ""
+      //for(let i = 0; i < filaPacientes.length; i++){
+      //  filaCompleta += (i + 1) + "º " + filaPacientes[i] + "\n"        
+      //}
+      //alert(filaCompleta)
         break   
     case 2:      
       if (filaPacientes.length > 0){
         alert("Chamando paciente: " + filaPacientes[0])
-        filaPacientes.shift()        
-      alert("Fila de pacientes:\n " + filaPacientes)
+        filaPacientes.shift()      
+        mostrarFila()  
+      //alert("Fila de pacientes:\n " + filaPacientes)
       } else {
         alert("A fila de pacientes vazia.")
       }        
