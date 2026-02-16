@@ -14,13 +14,7 @@ Escreva um programa em javascript que funcione como um cadastro de imóveis e at
 - O menu também deve ter a opção de mostrar todos os imóveis salvos.
 */
 
-let imoveisCadastrados = []
-let imovel = {
-  nomeProprietario: "",
-  quantidadeQuartos: 0,
-  quantidadeBanheiros: 0,
-  possuiGaragem: ""
-}
+const imoveisCadastrados = []
 let quantidadeImoveis = 0
 let menu = 0
 do{
@@ -28,33 +22,36 @@ do{
     "Imóveis cadastrados: " + imoveisCadastrados.length + 
     "\n\nDigite a opção desejada:\n1: Cadastrar Imóvel\n2: Mostrar Imóveis\n3: Sair"))
   switch(menu){
-    case 1:       
+    case 1:
+      const imovel = {
+      nomeProprietario: "",
+      quantidadeQuartos: 0,
+      quantidadeBanheiros: 0,
+      possuiGaragem: ""
+      }       
       imovel.nomeProprietario = prompt("Cadastrando imóvel\nDigite o nome do proprietário: ")
       imovel.quantidadeQuartos = parseInt(prompt("Digite a quantidade de quartos: "))
       imovel.quantidadeBanheiros = parseInt(prompt("Digite a quantidade de banheiros: "))
-      imovel.possuiGaragem = prompt("Possui garagem? (sim/não)")
+      imovel.possuiGaragem = prompt("Possui garagem? (Sim/Não)")
       imoveisCadastrados.push(imovel)
-      quantidadeImoveis = imoveisCadastrados.length
-      menu = 0
+      quantidadeImoveis = imoveisCadastrados.length      
       break    
     case 2:
       //alert("Imóveis cadastrados: ")
       if(imoveisCadastrados.length === 0){
-        alert("Nenhum imóvel cadastrado!")
-        menu = 0
-        break      
-      } else {              
-        for(let i = 0; i <= imoveisCadastrados.length; i++){
-          alert(
-                "Imóvel " + (i + 1) + ": \nNome do proprietário: " + imoveisCadastrados[i].nomeProprietario +
+        alert("Nenhum imóvel cadastrado!")                     
+      } else {   
+        let listaImoveis = ""          
+        for(let i = 0; i < imoveisCadastrados.length; i++){
+          listaImoveis += "Imóvel " + (i + 1) + ": \nNome do proprietário: " + imoveisCadastrados[i].nomeProprietario +
                 "\nQuantidade de quartos: " + imoveisCadastrados[i].quantidadeQuartos + 
                 "\nQuantidade de banheiros: " + imoveisCadastrados[i].quantidadeBanheiros + 
-                "\nPossui garagem: " + imoveisCadastrados[i].possuiGaragem
-                ) 
+                "\nPossui garagem: " + imoveisCadastrados[i].possuiGaragem + "\n\n"  
         }
-        menu = 0
-      }      
-      break
+        alert(listaImoveis)        
+        break
+      }  
+      break         
     case 3:
       alert("Saindo")
       break
