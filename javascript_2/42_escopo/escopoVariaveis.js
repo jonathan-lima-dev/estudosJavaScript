@@ -1,5 +1,5 @@
 /*  
-Variáveis externas podem ser utilizadas em escopos internos, como variável global sendo chamada dentro de uma função.
+Variáveis externas podem ser utilizadas em escopos internos, como variável global sendo chamada dentro de uma função. O contrário não funciona.
 
 OBS: Não é sempre que uma variável global vai funcionar logicamente falando de uma maneira exata em um escopo interno.
 */
